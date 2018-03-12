@@ -1,3 +1,9 @@
+/*
+100 - The 3n+1 problem
+authors: dipta1010
+RunTime: 0.000s (best time)
+*/
+
 #include<cstdio>
 #include<algorithm>
 #define lli long long int
