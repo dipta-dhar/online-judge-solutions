@@ -1,3 +1,9 @@
+/*
+101 - The blocks problem
+authors: dipta1010
+RunTime: 
+*/
+
 #include<bits/stdc++.h>
 using namespace std;
 
