@@ -1,3 +1,9 @@
+/*
+10038 - Jolly Jumpers
+authors: dipta1010
+RunTime: 0.000s (best time)
+*/
+
 #include<cstdio>
 #include<cstring>
 
