@@ -18,6 +18,7 @@ void init() {
 int main() {
     while(scanf("%lld %lld", &a,&b) == 2) {
         init();
+        
         mcnt = 0;  // max counter
         for(int i=a; i<=b; i++) {
             cnt = 0; // counter
