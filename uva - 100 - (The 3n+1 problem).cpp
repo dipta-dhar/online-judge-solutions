@@ -9,18 +9,15 @@ RunTime: 0.000s (best time)
 #define lli long long int
 using namespace std;
 
-lli a,b,n, cnt, mcnt;
-
-void init() {
-    if (a>b) { n=a; a=b; b=n;  }
-}
+lli a,b, x,y, n, cnt, mcnt;
 
 int main() {
     while(scanf("%lld %lld", &a,&b) == 2) {
-        init();
+        x = min(a, b);
+        y = max(a, b);
         
         mcnt = 0;  // max counter
-        for(int i=a; i<=b; i++) {
+        for(int i=x; i<=y; i++) {
             cnt = 0; // counter
             n = i;
             while(n != 1) {
