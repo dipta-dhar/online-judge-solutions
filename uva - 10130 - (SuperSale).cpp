@@ -5,28 +5,29 @@ RunTime:
 authors: dipta1010
 */
 
-#include<bits/stdc++.h>
+#include<cstdio>
+#define max(a,b) ((a)>(b) ? (a):(b))
 using namespace std;
 
 int TC, N,G,MW, i,Ans;
 int weight[1001], price[1001], K[1005][35];
 
-int knapSack(int W, int wt[], int val[], int n) {
+int knapSack(int MW, int weight[], int price[], int N) {
     int i, w;
 
-   for (i=0; i<=n; i++) {
-        for (w=0; w<=W; w++) {
-            if (i==0 || w==0)       K[i][w] = 0;
-            else if (wt[i-1] <= w)  K[i][w] = max(val[i-1]+K[i-1][w-wt[i-1]], K[i-1][w]);
-            else                    K[i][w] = K[i-1][w];
+   for (i=0; i<=N; i++) {
+        for (w=0; w<=MW; w++) {
+            if (i==0 || w==0)           K[i][w] = 0;
+            else if (weight[i-1] <= w)  K[i][w] = max(price[i-1]+K[i-1][w-weight[i-1]], K[i-1][w]);
+            else                        K[i][w] = K[i-1][w];
         }
     }
 
-   return K[n][W];
+   return K[N][MW];
 }
 
 int main() {
-    // Input: Test case
+    // Enter Test case
     scanf("%d", &TC);
 
     while(TC--) {
