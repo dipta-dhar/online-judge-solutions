@@ -5,8 +5,8 @@ RunTime: 0.010
 authors: dipta1010
 */
 
-#include <cstdio>
-#include <cstring>
+#include<cstdio>
+#include<cstring>
 using namespace std;
 
 int coins[] = {1, 5, 10, 25, 50};
