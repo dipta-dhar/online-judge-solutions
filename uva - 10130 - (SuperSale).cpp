@@ -6,6 +6,7 @@ authors: dipta1010
 */
 
 #include<cstdio>
+#include<cstring>
 #define max(a,b) ((a)>(b) ? (a):(b))
 using namespace std;
 
@@ -15,7 +16,9 @@ int weight[1001], price[1001], K[1005][35];
 int knapSack(int MW, int weight[], int price[], int N) {
     int i, w;
 
-   for (i=0; i<=N; i++) {
+    if (K[N][MW])   return K[N][MW];
+
+    for (i=0; i<=N; i++) {
         for (w=0; w<=MW; w++) {
             if (i==0 || w==0)           K[i][w] = 0;
             else if (weight[i-1] <= w)  K[i][w] = max(price[i-1]+K[i-1][w-weight[i-1]], K[i-1][w]);
@@ -31,6 +34,8 @@ int main() {
     scanf("%d", &TC);
 
     while(TC--) {
+        memset(K,0, sizeof(K[0][0])*1005*35);
+
         scanf("%d", &N);
         for(i=0; i<N; i++) {
             scanf("%d %d", &price[i], &weight[i]);
